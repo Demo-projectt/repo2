@@ -5,26 +5,9 @@ properties([
     projectUrlStr: 'https://github.com/Demo-projectt/repo2.git'],
     pipelineTriggers([githubPush()])])
 
-pipeline {
-    agent any 
-
-    stages {
-        stage('Build') { 
-            steps { 
-                sh 'pwd' 
-            }
-        }
-        stage('Test'){
-            steps {
-                sh 'java -version'
-                
-            }
-        }
-        stage('Deploy') {
-            steps {
-                sh 'ls'
-                sh 'pwd'
-            }
-        }
-    }
+node {
+   stage 'build'
+   echo 'hello boy'
+   stage 'test'
+   echo 'bomb'
 }
