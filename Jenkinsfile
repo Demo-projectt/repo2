@@ -3,7 +3,8 @@ properties([
     [$class: 'GithubProjectProperty',
     displayName: '',
     projectUrlStr: 'https://github.com/Demo-projectt/repo2.git'],
-    pipelineTriggers([githubPush()])])
+    pipelineTriggers([githubPush()])
+])
 node {
    stage 'build'
    echo 'hello boy'
